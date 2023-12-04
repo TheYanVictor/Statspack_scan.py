@@ -477,7 +477,7 @@ SQL ordered by Elapsed time for DB: IGT  Instance: igt  Snaps: 6693 -6723
   Elapsed                Elap per            CPU                        Old
   Time (s)   Executions  Exec (s)  %Total   Time (s)  Physical Reads Hash Value
 ---------- ------------ ---------- ------ ---------- --------------- ----------
-    404.33      159,917       0.00   65.4     337.71       1,011,306 3851979199
+    404.33      159.917       0.00   65.4     337.71       1,011,306 3851979199
 Module: dbrefresh@my_server-aps-1 (TNS V1-V3)
 SELECT TABLE_ID, ISN, MAP_NAME FROM REFRESH_LOG  ORDER BY TABLE_
 ID, MAP_NAME

@@ -5,7 +5,7 @@ import re
 file = "statspack_example.txt"
 
 #Define string
-string_to_search = "SQL ordered by CPU  DB/Inst:"
+string_to_search = "SQL ordered by Elapsed time for DB:"
 
 #Find in a text file the number of the line with "Snapshot" + space + "Snap Id" + space + "Snap Time" + space + "Sessions Curs/Sess Comment"
 def find_snap_id(file):
@@ -25,9 +25,9 @@ def find_number(file):
                 #Store all number in line
                 string = file.readline()
                 #Find all number in line
-                result = re.findall(r'\d+', string)
+                result = re.findall(r'[+-]? *(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?', string)
                 #Join 7 and 8 number in line
-                return result[6] + ',' +  result[7]
+                return result[3]
 
 #Print the result
 SQL_usage = find_number(file)
