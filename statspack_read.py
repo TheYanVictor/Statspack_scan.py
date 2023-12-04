@@ -16,18 +16,21 @@ def find_snap_id(file):
 
 line_number = find_snap_id(file)
 
-#Store the following 50 lines from the line string_to_search in a list (SQL_ordered_by_CPU)
-def print_snap_id(file):
-    SQL_ordered_by_CPU = []
+
+# Find the third number in the 15th line of the list SQL_ordered_by_CPU
+def find_number(file):
     with open(file, "r") as file:
         for num, line in enumerate(file, 1):
-            if num == line_number:
-                for i in range(50):
-                    #Each line is stored in a list as a string
-                    SQL_ordered_by_CPU.append(file.readline())
-                break
-    return SQL_ordered_by_CPU
-            
-#Print the list SQL_ordered_by_CPU
-for line in print_snap_id(file):
-    print(line)
+            if num == line_number + 7:
+                #Store all number in line
+                string = file.readline()
+                #Find all number in line
+                result = re.findall(r'\d+', string)
+                #Join 7 and 8 number in line
+                return result[6] + ',' +  result[7]
+
+#Print the result
+SQL_usage = find_number(file)
+print(SQL_usage)
+
+
