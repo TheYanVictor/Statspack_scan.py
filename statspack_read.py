@@ -33,4 +33,20 @@ def find_number(file):
 SQL_usage = find_number(file)
 print(SQL_usage)
 
+#Store the strings beneath line_number + 7 until the next empty line
+def find_string(file):
+    with open(file, "r") as file:
+        for num, line in enumerate(file, 1):
+            if num == line_number + 8:
+                #Store lines in a list  
+                module = file.readlines()
+                #Stop at first empty line
+                module = module[:module.index('\n')]
+                
+                return module
+
+#Print all lines
+module = find_string(file)
+print(module)
+
 
